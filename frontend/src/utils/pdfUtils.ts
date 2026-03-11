@@ -15,7 +15,7 @@ export async function extractImagesFromPdf(file: File): Promise<string[]> {
     canvas.width = viewport.width
     canvas.height = viewport.height
     const ctx = canvas.getContext('2d')!
-    await page.render({ canvasContext: ctx, viewport, canvas }).promise
+    await page.render({ canvasContext: ctx, viewport }).promise
     images.push(canvas.toDataURL('image/png'))
   }
 
